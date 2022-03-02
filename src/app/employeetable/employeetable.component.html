@@ -1,0 +1,18 @@
+<div>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Total Time in Month</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr [ngClass]="{'less-then-100-hours' : getEmployeeTime(employee) < 100}" 
+      *ngFor="let employee of employeeList">
+          <td>{{employee}}</td>
+          <td>{{getEmployeeTime(employee)}}</td>
+          <td><a href="#">Edit</a></td>
+      </tr>
+  </tbody>
+  </table>
+  <app-pie *ngIf="pieData" [pieData]="pieData"></app-pie>
+</div>
